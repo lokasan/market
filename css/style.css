@@ -1,0 +1,23 @@
+.products {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 25px;
+}
+.header {
+    margin-bottom:  10px;
+    height: 100px;
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8)
+}
+.images {
+    height: 200px;
+}
+.price {
+    text-align: center;
+}
+.btn-success {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
