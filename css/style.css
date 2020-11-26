@@ -11,12 +11,13 @@ header{
 button:focus{
     outline: none;
 }
+
 .logo{
 
     text-transform: uppercase;
     font-weight: bold;
 }
-.btn-cart{
+.btn-cart, .btn-call{
     background-color: #fafafa;
     padding: 10px 20px;
     border: 1px solid transparent;
@@ -25,7 +26,7 @@ button:focus{
     transition: all ease-in-out .4s;
     cursor: pointer;
 }
-.btn-cart:hover{
+.btn-cart:hover, .btn-call:hover{
     background-color: transparent;
     border-color: #fafafa;
     color: #fafafa;
@@ -163,4 +164,87 @@ img {
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #fafafa;
+}
+/*#inline {*/
+/*    margin-left:30px;*/
+/*    !*width:50%;*!*/
+/*    margin:0 auto;*/
+/*    background:#FFF;*/
+/*    padding:10px 20px;*/
+/*}*/
+.txt {
+    display:inline-block;
+    color:#676767;
+    width:200px;
+    margin-bottom:10px;
+    border:1px solid #CCC;
+    padding:5px 9px;
+    font-size:15px!important;
+    line-height:1.4em;
+}
+.txtarea {
+    display:inline-block;
+    color:#676767;
+    width:200px;
+    margin-bottom:10px;
+    border:1px solid #CCC;
+    padding:5px 9px;
+    font-size:15px!important;
+    line-height:1.4em;
+    height:80px;
+}
+.txt:focus, .txtarea:focus {
+    border-style:solid;
+    border-color:#BABABA;
+    color:#444;
+}
+input.error, textarea.error {
+    border-color:#973D3D;
+    border-style:solid;
+    background:#F0BEBE;
+    color:#A35959;
+}
+input.error:focus, textarea.error:focus {
+    border-color:#973D3D;
+    color:#A35959;
+}
+#send {
+    color:#FFFFFF;
+    display:block;
+    cursor:pointer;
+    padding:5px 11px;
+    font-size:1.2em;
+    width:200px;
+    margin-bottom:20px;
+    background-color: #2f2a2d;
+    border: 1px solid transparent;
+    transition: all ease-in-out .4s;
+}
+#send:hover {
+    background-color: #fafafa;
+    color: #2f2a2d;
+    border: 1px solid #2f2a2d;
+}
+.callback-form {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.62);
+    border-radius: 5px;
+    box-sizing: border-box;
+    /*right: 0;*/
+    top: 130%;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    color: black;
+    width: 300px;
+}
+.callback-form:before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    right: 35px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
 }

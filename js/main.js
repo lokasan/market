@@ -200,6 +200,7 @@ class Cart extends List{
     _init(){
         document.querySelector('.btn-cart').addEventListener('click', () => {
             document.querySelector(this.container).classList.toggle('invisible')
+
         })
         document.querySelector(this.container).addEventListener('click', e => {
             if(e.target.classList.contains('del-btn')){
@@ -232,11 +233,23 @@ class CartItem extends Item{
         </div>`
     }
 }
+class CallBackForm {
+    constructor(container = '.callback-form') {
+        this.container = container
+        this._init()
 
+    }
+
+    _init(){
+        document.querySelector('.btn-call').addEventListener('click', () => {
+            document.querySelector(this.container).classList.toggle('invisible')
+        })
+    }
+}
 const listContext = {
     ProductsList: ProductItem,
     Cart: CartItem
 };
-
+let callb = new CallBackForm()
 let cart = new Cart()
 let products = new ProductsList(cart)

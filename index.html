@@ -8,6 +8,7 @@
 </head>
 <body>
 <header>
+
     <div class="logo">Интернет-магазин</div>
     <div class="cart">
         <form action="#" class="search-form">
@@ -16,13 +17,26 @@
                 <i class="fas fa-search"></i>
             </button>
         </form>
+        <button class="btn-call" type="button">Обратная связь</button>
         <button class="btn-cart" type="button">Корзина</button>
+        <div class="callback-form invisible">
+            <h2>Онлайн заявка</h2>
+            <form id="contact" action="#" method="post" name="contact">
+                <input id="name" class="txt" name="name" type="name" placeholder="Ваше имя">
+                <input id="phone" class="txt" name="phone" type="phone" placeholder="Ваш телефон">
+                <input id="email" class="txt" name="email" type="email" placeholder="Ваш e-mail">
+                <textarea id="msg" class="txtarea" name="msg" placeholder="Ваше сообщение:"></textarea>
+                <button id="send">Отправить</button>
+            </form>
+        </div>
         <div class="cart-block invisible"></div>
     </div>
 </header>
 <main>
     <div class="products"></div>
+
 </main>
+
 <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 </body>
