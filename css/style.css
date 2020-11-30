@@ -248,3 +248,9 @@ input.error:focus, textarea.error:focus {
     border-right: 10px solid transparent;
     border-bottom: 10px solid white;
 }
+.warn {
+    border-color: red
+}
+.warn-txt {
+    color: red
+}

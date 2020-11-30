@@ -237,13 +237,60 @@ class CallBackForm {
     constructor(container = '.callback-form') {
         this.container = container
         this._init()
+        this._lines = {
+            name: document.querySelector('.name'),
+            phone: document.querySelector('.phone'),
+            email: document.querySelector('.email'),
+        }
+        this._errors = {
+            name: 'Допустимы только буквы',
+            phone: 'Допустимый формат +7(900)000-0000',
+            email: 'Допустимый формат mymail@mail.ru, my.mail@mail.ru, my-mail@mail.ru',
 
+        }
+        this._regExpression =  {
+            name: /^[a-za-яё]+/i,
+            phone: /^\+7\(\d{3}\)\d{3}-\d{4}$/,
+            email: /^[\w._-]+@\w+\.[a-z]{2,4}$/i
+        }
     }
 
     _init(){
         document.querySelector('.btn-call').addEventListener('click', () => {
             document.querySelector(this.container).classList.toggle('invisible')
+            if (!document.querySelector(`${this.container}.invisible`)) {
+                document.querySelector('.validation-form').addEventListener('submit', (event) => {
+                    event.preventDefault()
+                    this.sendMsg()
+                })
+            } else {
+                document.querySelector('.validation-form').removeEventListener('submit', this.sendMsg)
+            }
         })
+    }
+    clear() {
+        const el = document.querySelectorAll('.warn-txt')
+        if (el.length){
+            for (let key of el) {
+                key.remove()
+            }
+        }
+    }
+    sendMsg(){
+        this.clear()
+
+        for (let key in this._lines) {
+            if (this._lines.hasOwnProperty(key)) {
+
+                if (!(this._lines[key].value.match(this._regExpression[key]))) {
+                    this._lines[key].insertAdjacentHTML('afterend', `<p class="warn-txt">${this._errors[key]}</p>`)
+                    this._lines[key].classList.add('warn')
+                } else {
+                    this._lines[key].classList.contains('warn') ? this._lines[key].classList.remove('warn') : 0
+                }
+
+            }
+        }
     }
 }
 const listContext = {
